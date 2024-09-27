@@ -1,0 +1,567 @@
+@import './global.scss';
+
+.header {
+    font-size: 30px;
+    @include Container(10%, 10%, 0, margin);
+    @include flex(row, space-between, center);
+    @include adaptiv(mobile) {
+        @include Container(1%, 1%, 0, margin);
+        font-size: 20px;
+    }
+    @include adaptiv(table) {
+        font-size: 20px;
+        @include Container(1%, 1%, 0, margin);
+    }
+    &__burger {
+        display: none;
+        @include adaptiv(mobile) {
+            @include flex(row, space-between, 0);
+            width: 250px;
+        }
+    }
+    &__desktop {
+        width: 100%;
+        @include flex(row, space-between, center);
+        @include adaptiv(mobile) {
+            display: none;  
+        }
+    }
+    &__logo {
+        color: #F2F9E3;
+        @include flex(row, space-between, center);
+        &_img {
+            @include sizeBox(66px, 71px);
+        }
+        @include adaptiv(mobile) {
+            @include flex(row, space-between, 0);
+        }
+    }
+    &__butns {
+        width: 50%;
+        @include adaptiv(table) {
+            img{
+                display: none
+            }
+        }
+        @include flex(row, space-between, center);     
+        a {
+            text-decoration: none;
+        }
+    }
+}
+// All buttons
+.btn {
+    @include flex(column, 0, center);
+    @include hoverButtonBigger();
+} 
+// Main section
+.main {
+    padding-top: 2%;
+    height: 100vh;
+    @include backGround(#1c1c1c, "../assets/img/final_bg_1.png");
+    @include flex(column, 0, 0);
+    @include adaptiv(mobile) {
+        margin: 0;
+        @include flex(column, 0, center);
+    }
+    &__title {
+        width: -webkit-fill-available;
+        font-size: 80px;
+        margin-top: 10%;
+        text-align: center;
+        text-transform: uppercase;
+        @include flex(row, center, 0);
+        @include adaptiv(table) {
+            font-size: 60px;
+        }
+        @include adaptiv(mobile) {
+            margin: 0;
+            font-size: 40px;
+            max-width: 222px; 
+            margin-top: 134px;
+        }
+        
+    }
+    &__imgArrow {
+        @include sizeBox(100px, 100px);
+        margin-top: 10%;
+        margin-left: 50%;
+        transition: ease-in 0.2s;
+        &:hover {
+            transform: translate(0, 150px);
+        }
+        @include adaptiv(mobile) {
+            display: none;
+        }
+    }
+    &__text {
+        &-mobile {
+            display: none;
+            @include adaptiv(table) {
+                @include flex(row, center, center);
+                max-width: 256px;
+                font-size: 20px;
+                letter-spacing: 5px;
+                text-align: center;
+                margin-top: 100px;
+                margin-left: 34%;          
+            }
+            @include adaptiv(mobile) {
+                margin-left: 0;
+            }
+        }
+    }
+}
+// Course section
+.course {
+    height: 100vh;
+    @include backGround(#393939, "../assets/img/bg-second.png");
+    @include Container(10%, 10%, 2%, padding);
+    @include adaptiv(mobile) {
+        @include Container(2%, 2%, 5%, padding);
+    }
+    &__title {
+        width: -webkit-fill-available;
+        text-transform: uppercase;
+        @include cardContent(80px, 5%);
+        @include flex(0, center, 0);
+        @include adaptiv(mobile) {
+            margin: 0;
+            text-align: center;
+            @include cardContent(40px, 15%);
+        }
+        @include adaptiv(table) {
+            font-size: 60px;
+            margin-top: 5%;
+        }
+    }
+    &__cards {
+        color: #FFFDD5;
+        @include flex(row, space-between, 0);
+        @include adaptiv(table) {
+            @include flex(row, space-between, center);
+        }
+    }
+    &__arrow {
+        display: none;
+        @include adaptiv(table) {
+            display: flex;
+            @include Container(10px, 10px, 0, margin);
+            &_reverse {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    &__card {
+        max-width: 358px;
+        width: 100%;
+        text-align: center;
+        border-radius: 20px;
+        background-color: #111111;
+        margin-bottom: 30px;
+        @include flex(column, 0, center);
+        @include hoverButtonSmaller();
+        &-none {
+            @include adaptiv(table) {
+                display: none;         
+            }
+        }
+        &_img {
+            border-radius: 40px;
+            @include sizeBox(50px, 50px);
+            margin-bottom: 40px;
+        }
+        &_title {
+            @include extraFontfamily(Monterat, 900);
+            margin-top: 39px;
+            @include cardContent(20px, 30px);
+        }
+        &_subtitle {
+            @include extraFontfamily(Monterat, 900);
+            @include cardContent(20px, 30px);
+        }
+        &_p {
+            margin-left: 57px;
+            margin-right: 57px;
+            @include cardContent(15px, 30px);
+        }
+        &_btn {
+            a {
+                @include cardContent(30px, 30px);
+                text-decoration: none;
+            }   
+        }
+    }
+    &__more {
+        &_text {
+            font-size: 30px;
+            margin-top: 5%;
+            text-decoration: none;
+        }
+    }
+}
+// Food section
+.food {
+    height: 100vh;
+    padding-top: 10px;
+    @include backGround(#393939, "../assets/img/bg-threee.png");
+    @include adaptiv(mobile) {
+        @include flex(column, 0, center);
+        @include Container(8%, 8%, 5%, padding);
+    }
+    &__title {
+        @include cardContent(80px, 10px);
+        @include flex(0, center, 0);
+        @include adaptiv(mobile) {
+            font-size: 40px;
+        }
+        @include adaptiv(table) {
+            font-size: 60px;
+            margin-top: 2%;
+            margin-bottom: 2%;
+        }
+        &_desktop {
+            @include adaptiv(mobile) {
+                display: none;
+            }
+        }
+        &_mobile {
+            display: none;
+            @include adaptiv(mobile) {
+                display: block;
+            }
+        }
+    }
+    &__btn {
+        text-align: center;
+        margin-top: 20px;
+        @include flex(column, 0, center);
+        @include adaptiv(mobile) {
+            display: none;
+        }
+        &__block{
+           max-width: 200px; 
+           @include flex(column, 0, center);
+           @include hoverButtonBigger();
+        }
+        &-mobile {
+            display: none;
+            @include adaptiv(mobile) {
+                @include flex(column, 0, center);
+            }
+        }
+        a {
+            font-size: 30px;
+            text-decoration: none;
+            @include adaptiv(mobile) {
+                @include cardContent(20px, 10px);
+            }
+        }
+        img {
+            width: 100px;
+        }
+    }
+
+    &__main {
+        @include flex(row, space-between, 0);
+        @include Container(10%, 10%, 0, margin);
+        @include adaptiv(mobile) {
+            margin: 0;
+        }
+        @include adaptiv(table) {
+            @include flex(row, space-around, 0)
+        }
+
+    }
+    &__cardsMain {
+        @include flex(row,0 ,0 );
+        
+        @include adaptiv(table) {
+            @include flex(column, 0, center);
+            gap: 30px;
+        }
+        @include adaptiv(mobile) {
+            gap: 0;
+        }
+    }
+    &__cardBlock {
+        @include flex(column, 0, center);
+    }
+    &__cards {
+        &-mobile {
+            display: none;
+            @include adaptiv(table) {
+                @include flex(row, space-between, 0);
+                gap: 30px;
+            }
+            @include adaptiv(mobile) {
+                gap: 0;
+            }
+            
+        }
+        &-desktop {
+            @include flex(column, 0, 0);
+            @include adaptiv(table) {
+                display: none;
+            }
+        }
+        
+    }
+    &__extraText {
+        font-size: 30px;
+        max-width: 160px;
+        color: #F2F9E3;
+        text-align: center;
+        margin-top: 10%;
+        @include adaptiv(table) {
+            display: none;
+        }
+    }
+    &__card {
+        @include sizeBox(160px, 180px);
+        background-color: #C6C6AD;
+        text-align: center;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        @include flex(column, 0, center);
+        @include hoverButtonBigger();
+        &_titleMobile {
+            display: none;  
+            font-size: 30px;
+            @include adaptiv(mobile) {
+                display: block;
+                color: #C6C6AD;
+                margin-bottom: 14px;
+                margin-top: 29px;
+            }   
+        }
+        &_arrowMobile {
+            width: 30px;
+            @include adaptiv(mobile) {
+                @include Container(10px, 10px, 0, margin)
+            }
+            &-rotate {
+                transform: rotate(180deg);
+            }
+        }
+        &_img {
+            @include sizeBox(60px, 60px);
+            margin-bottom: 13px;
+        }
+        &_mass {
+            @include cardContent(7px, 5px);
+        }
+        &_price {
+            @include cardContent(7px, 2px);
+        }
+        &_title {
+            @include cardContent(12px, 8px);
+        }
+        &_BGU {
+            @include cardContent(7px, 8px);
+        }
+        &_btn {
+            color: #3F47FF;
+            @include cardContent(15px, 8px);
+            @include hoverButtonBigger();
+        }
+        &_comp {
+            font-size: 8px; 
+        }
+    }
+    &__arrow{
+        @include Container(20px, 20px, 0, margin);
+    }
+}
+// Aboniment section
+.aboniments {
+    height: 100vh;
+    @include flex(column, 0, 0);
+    @include backGround(#393939, "../assets/img/BgLast__page.png");
+    @include Container(10%, 10%, 0, padding);
+    &__text {
+        @include flex(column, 0, center);
+        @include adaptiv(mobile) {
+            h1 {
+                margin-top: 20px;
+                @include cardContent(40px, 50px);
+            }
+            h2 {
+                @include cardContent(20px, 50px);
+            }
+        }
+    }
+    &__more {
+        @include hoverButtonBigger();
+        @include flex(column, 0, center);
+        &_text {
+            font-size: 30px;
+            text-decoration: none;   
+        }
+    }
+    &__title {
+        @include cardContent(80px, 50px);
+        @include adaptiv(table) {
+            @include cardContent(50px, 30px);
+        }
+    }
+    &__city {
+        @include cardContent(50px, 44px);
+        @include adaptiv(table) {
+            @include cardContent(20px, 30px);
+        }
+    }
+    &__editCity {
+        @include cardContent(40px, 30px);
+        @include flex(column, 0, center);
+        @include hoverButtonBigger();
+        @include adaptiv(mobile) {
+            display: none;
+        }
+        @include adaptiv(table) {
+            @include cardContent(30px, 20px);
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+    &__ourVote {
+        @include cardContent(45px, 31px);
+        @include adaptiv(mobile) {
+            display: none;
+        }
+    }
+    &__cards {
+        width: -webkit-fill-available;
+        color: #F2F9E3;
+        margin-bottom: 30px;
+        @include flex(row, space-between, 0);
+        @include adaptiv(mobile) {
+            @include flex(row, center, 0);
+        }
+    }
+    &__card {
+        width: 30%;
+        background-color: #111111;
+        border-radius: 20px;
+        text-align: center;
+        @include flex(column, 0, center);
+        @include Container(50px, 50px, 0, padding);
+        @include hoverButtonBigger();
+        @include adaptiv(table) {
+            width: 100%;
+        }
+        &_arrowMobile {
+            display: none;
+            width: 30px;
+            @include Container(10px, 10px, 0, margin);
+            @include adaptiv(table) {
+                display: block;
+            }
+            &-rotate {
+                transform: rotate(180deg);
+            }
+        }
+        &-none {
+            @include adaptiv(table) {
+                display: none;
+            }
+        }
+        &_img {
+            @include sizeBox(150px, 85px);
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+        &_title {
+            @include cardContent(30px, 14px);
+        }
+        &_adress {
+            @include cardContent(15px, 10px);
+        }
+        &_description {
+            @include cardContent(15px, 50px);
+        }
+        &_btn {
+            a {
+                text-decoration: none;
+                @include cardContent(30px, 23px);  
+            } 
+        }
+    }
+}
+// Big line section
+.ToFoter_line {
+    margin-top: 70px;
+    @include adaptiv(table) {
+        display: none;
+    }
+}
+// Footer
+.footer {
+    height: 160px;
+    background-color: #1c1c1c;
+    color: #F2F9E3;
+    @include flex(row, space-between, 0);
+    @include Container(10%, 10%, 30px, padding);
+    &__first {
+        @include flex(column, 0, 0);
+        &_title {
+            @include cardContent(20px, 20px);
+            @include adaptiv(mobile) {
+                font-size: 10px;
+            }
+        }
+        &_rules {
+            @include cardContent(10px, 15px);
+            @include adaptiv(mobile) {
+                font-size: 10px;
+            }
+        }
+        &_authors {
+            font-size: 10px;
+            @include adaptiv(mobile) {
+                font-size: 5px;
+            }
+        }
+    }
+    &__contacts {
+        @include flex(column, 0, 0);
+        &_contact {
+            @include cardContent(15px, 20px);
+            @include adaptiv(mobile) {
+                font-size: 10px;
+            }
+        }
+        &_number {
+            font-size: 15px;
+            color: #F2F9E3;
+            text-decoration: none;
+            @include adaptiv(mobile) {
+                font-size: 8px;
+            }
+        }
+    }
+    &__logo {
+        @include flex(row, center, 0);
+        @include adaptiv(mobile) {
+            display: none;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+            @include flex(row, center, 0);
+        }
+        &_img {
+            @include sizeBox(65px, 70px);
+            @include adaptiv(table) {
+                @include sizeBox(35px, 40px);
+            }
+        }
+        &_text {
+            @include sizeBox(30px, 30px);
+        }
+    }
+}
+.colorYellow{
+    color: #FAED26;
+}

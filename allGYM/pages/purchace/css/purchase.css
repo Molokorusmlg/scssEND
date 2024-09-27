@@ -1,0 +1,96 @@
+@font-face {
+  font-family: PoiretOne;
+  src: url(../../../assets/fonts/PoiretOne-Regular.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: Monterat;
+  src: url(../../../assets/fonts/MontserratAlternates-ExtraBold.ttf);
+  font-weight: 900;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: PoiretOne;
+  font-weight: 500;
+  cursor: default;
+  color: white;
+}
+
+.header {
+  padding-top: 3%;
+  padding-right: 5%;
+  padding-left: 5%;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo img {
+  filter: invert(1);
+  width: 66px;
+  height: 71px;
+}
+.header__button {
+  font-size: 30px;
+  letter-spacing: 5px;
+  transition: ease-in 0.2s;
+}
+.header__button:hover {
+  transform: scale(1.2);
+}
+.header__button a {
+  text-decoration: none;
+}
+
+.main {
+  padding-top: 3%;
+  padding-right: 5%;
+  padding-left: 5%;
+  background-color: black;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.main__title {
+  margin-top: 10%;
+  font-size: 60px;
+  letter-spacing: 20px;
+}
+@media (max-width: 650px) {
+  .main__title {
+    font-size: 30px;
+  }
+}
+.main__purchase {
+  margin-top: 5%;
+  font-size: 30px;
+}
+@media (max-width: 650px) {
+  .main__purchase {
+    font-size: 20px;
+  }
+}
+.main__btn {
+  margin-top: 5%;
+  font-size: 35px;
+  transition: ease-in 0.2s;
+}
+@media (max-width: 650px) {
+  .main__btn {
+    font-size: 25px;
+  }
+}
+.main__btn:hover {
+  transform: scale(1.2);
+}

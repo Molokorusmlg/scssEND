@@ -1,0 +1,101 @@
+// Fonts
+@font-face {
+    font-family: PoiretOne;
+    src: url(../../../assets/fonts/PoiretOne-Regular.ttf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Monterat;
+    src: url(../../../assets/fonts/MontserratAlternates-ExtraBold.ttf);
+    font-weight: 900;
+}
+// All rules
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: PoiretOne;
+    font-weight: 500;
+    cursor: default;
+    color: white;
+}
+
+@mixin flexCenter() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin flexrow() {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@mixin container() {
+    padding-top: 3%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.header {
+    @include container();
+    background-color: black;
+    @include flexrow();
+    align-items: center;
+    &__logo {
+        @include flexrow();
+        align-items: center;
+        img {
+            filter: invert(1);
+            width: 66px;
+            height: 71px;
+        }
+    }
+    &__button {
+        font-size: 30px;
+        letter-spacing: 5px;
+        transition: ease-in 0.2s;
+        &:hover {
+            transform: scale(1.2);
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.main {
+    @include container();
+    background-color: black;
+    height: 900px;
+    @include flexCenter();
+    text-align: center;
+    &__title {
+        margin-top: 10%;
+        font-size: 60px;
+        letter-spacing: 20px;
+        @media (max-width: 650px) {
+            font-size: 30px;
+        }
+    }
+    &__purchase {
+        margin-top: 5%;
+        font-size: 30px;
+        @media (max-width: 650px) {
+            font-size: 20px;
+        }
+    }
+    &__btn {
+        margin-top: 5%;
+        font-size: 35px;
+        transition: ease-in 0.2s;
+        @media (max-width: 650px) {
+            font-size: 25px;
+        }
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}

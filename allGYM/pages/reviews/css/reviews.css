@@ -1,0 +1,140 @@
+@font-face {
+  font-family: PoiretOne;
+  src: url(../../../assets/fonts/PoiretOne-Regular.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: Monterat;
+  src: url(../../../assets/fonts/MontserratAlternates-ExtraBold.ttf);
+  font-weight: 900;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 500;
+}
+
+.main {
+  height: 100vh;
+  background: url(../../../assets/img/Bg-account.png) no-repeat center center/cover;
+  background-color: #1c1c1c;
+  font-family: PoiretOne;
+}
+.main__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main__title {
+  font-size: 80px;
+  color: #FAED26;
+  margin-bottom: 3%;
+}
+@media (max-width: 940px) {
+  .main__title {
+    font-size: 50px;
+  }
+}
+.main__cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+@media (max-width: 940px) {
+  .main__cards {
+    height: 50%;
+    width: 90%;
+  }
+}
+.main__button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main__button a {
+  text-decoration: none;
+  color: #FAED26;
+  font-size: 70px;
+  letter-spacing: 3px;
+}
+@media (max-width: 940px) {
+  .main__button a {
+    font-size: 40px;
+  }
+}
+.main__card {
+  height: 60%;
+  background-color: #111111;
+  color: #FFFDD5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  width: 100%;
+  position: relative;
+}
+.main__card_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.main__card_content-btn {
+  margin-bottom: 50px;
+}
+.main__card_content-btn a {
+  text-decoration: none;
+  color: #FAED26;
+  font-size: 30px;
+  letter-spacing: 3px;
+}
+.main__card_content-text {
+  max-width: 680px;
+  width: 100%;
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 8%;
+}
+@media (max-width: 940px) {
+  .main__card_content-text {
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 4%;
+  }
+}
+.main__card_content-img {
+  margin-bottom: 50px;
+  margin-top: 4rem;
+}
+.main__card_content-img img {
+  width: 180px;
+  height: 180px;
+}
+@media (max-width: 940px) {
+  .main__card_content-img img {
+    width: 100px;
+    height: 100px;
+  }
+}
+.main__card_userProfile {
+  position: absolute;
+  left: 10%;
+  font-family: Monterat;
+  font-weight: 900;
+  margin-top: 2%;
+}
+.main__card_nickName {
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+.main__Arrow {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.main__Arrow-deg {
+  transform: rotate(180deg);
+}

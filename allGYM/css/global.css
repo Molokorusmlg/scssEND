@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: PoiretOne;
+  font-weight: 500;
+  cursor: default;
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: PoiretOne;
+  src: url("../assets/fonts/PoiretOne-Regular.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: Monterat;
+  src: url("../assets/fonts/MontserratAlternates-ExtraBold.ttf");
+  font-weight: 900;
+}
